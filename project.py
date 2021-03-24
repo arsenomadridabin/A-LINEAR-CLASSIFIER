@@ -107,7 +107,7 @@ if __name__ == "__main__":
 	model=tf.estimator.LinearClassifier(feature_columns=feature_columns,n_classes=2)
 
 	# Validating model
-	# result = export_validation_result_to_json(X_train,y_train,X_val,y_val)
+	result = export_validation_result_to_json(X_train,y_train,X_val,y_val)
 	
 	input_func = tf.compat.v1.estimator.inputs.pandas_input_fn(x=X_train,y=y_train,batch_size=10,num_epochs=100,shuffle=True)
 	model.train(input_fn=input_func)
